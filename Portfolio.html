@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Kaka Malgwi | AI Leader</title>
+
+<style>
+:root {
+    --bg-color: #0f172a;
+    --text-color: white;
+    --card-bg: #1e293b;
+    --accent: #38bdf8;
+}
+
+body.light {
+    --bg-color: #f1f5f9;
+    --text-color: #0f172a;
+    --card-bg: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.4s ease;
+}
+
+header {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+body.light header {
+    background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+header p {
+    color: var(--accent);
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 12px 28px;
+    background: var(--accent);
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+section {
+    padding: 70px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--accent);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--card-bg);
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Dark/Light Toggle Button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    font-size: 22px;
+    padding: 15px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+
+<header>
+    <h1>Ahmed Kaka Malgwi</h1>
+    <p>Building 19,000 AI Builders from Northern Nigeria</p>
+    <a href="#contact" class="btn">Work With Me</a>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+        I am an AI community leader and youth empowerment advocate focused on transforming 
+        young minds into AI builders. Through Global AI Yola and leadership initiatives, 
+        I drive innovation, education, and mindset growth across Northern Nigeria.
+    </p>
+</section>
+
+<section>
+    <h2>What I Do</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>AI Education</h3>
+            <p>Training youth in AI tools and digital skills for global competitiveness.</p>
+        </div>
+        <div class="card">
+            <h3>Public Speaking</h3>
+            <p>Delivering powerful talks on mindset and technology innovation.</p>
+        </div>
+        <div class="card">
+            <h3>Community Leadership</h3>
+            <p>Organizing large-scale AI webinars and tech initiatives.</p>
+        </div>
+        <div class="card">
+            <h3>Career Development</h3>
+            <p>Helping students transition into high-impact tech careers.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p style="text-align:center;">
+        Email: ahmedkakamalgwi@gmail.com <br>
+        LinkedIn: Your LinkedIn Profile <br>
+        YouTube: Your YouTube Channel
+    </p>
+</section>
+
+<footer>
+    © 2026 Ahmed Kaka Malgwi | AI Leader | Youth Builder
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/2348167583597" class="whatsapp-btn" target="_blank">💬</a>
+
+<script>
+// Dark/Light Mode Toggle
+function toggleMode() {
+    document.body.classList.toggle("light");
+}
+
+// Scroll Animation
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        if(cardTop < triggerBottom){
+            card.classList.add('visible');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
